@@ -11,6 +11,8 @@ public class HelloEdpController {
 
     @GetMapping(value = "/api/hello")
     public String hello() {
-        return "Hello, EDP!";
+        String podName = System.getenv("HOSTNAME");
+        return "Hello, KubeRocketCI from " + podName;
+
     }
 }
